@@ -1,4 +1,13 @@
-// let player = prompt("rock,paper,scissor");
+let player ;
+const buttons = document.querySelectorAll('button');
+buttons.forEach((button)=>{
+  button.addEventListener("click",()=>{
+    player=button.id;
+    console.log(player);
+  })
+}
+);
+
 let computer;
 let selection = Math.random();
 if (selection < 0.34) {
