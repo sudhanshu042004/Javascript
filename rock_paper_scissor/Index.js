@@ -7,6 +7,7 @@ var loose = false;
 const playerscore = document.querySelector("#pscore");
 const computerscore = document.querySelector("#cscore");
 const playerSelection = document.querySelector("#player");
+const computerSelection = document.querySelector("#Computer");
 const Result = document.querySelector("#gameResult");
 
 //reload function
@@ -44,7 +45,7 @@ const buttons = document.querySelectorAll("button");
 buttons.forEach((button) => {
   button.addEventListener("click", () => {
     //random weapon for computer
-    let computer;
+    let computer ="  ";
     let selection = Math.random();
     if (selection < 0.34) {
       computer = "rock";
@@ -53,7 +54,10 @@ buttons.forEach((button) => {
     } else computer = "scissor";
 
     player = button.id;
+    computerSelection.innerHTML=computer;
+   setTimeout(() => {
     Game(player, computer);
+   }, 1000); 
 
     if (P_count > 3) {
       win = true;
