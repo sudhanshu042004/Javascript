@@ -1,11 +1,15 @@
 let player;
 let P_count = 0;
 let C_count = 0;
+var win = false;
+var loose = false;
 
 const playerscore = document.querySelector("#pscore");
 const computerscore = document.querySelector("#cscore");
-
 const playerSelection = document.querySelector("#player");
+const Result = document.querySelector("#gameResult");
+
+//reload function
 
 //game
 function Game(x, y) {
@@ -21,7 +25,7 @@ function Game(x, y) {
     (x == "scissor" && y == "rock")
   ) {
     playerSelection.textContent = "Loose!!";
-    C_count += 1;
+    C_count = C_count + 1;
     computerscore.textContent = C_count;
   } else if (
     (x == "rock" && y == "scissor") ||
@@ -29,7 +33,7 @@ function Game(x, y) {
     (x == "scissor" && y == "paper")
   ) {
     playerSelection.textContent = "Winn!!";
-    P_count += 1;
+    P_count = P_count + 1;
     playerscore.textContent = P_count;
   } else playerSelection.textContent = "Enter Correct Option!!";
 }
@@ -39,7 +43,6 @@ const buttons = document.querySelectorAll("button");
 
 buttons.forEach((button) => {
   button.addEventListener("click", () => {
-
     //random weapon for computer
     let computer;
     let selection = Math.random();
@@ -51,5 +54,39 @@ buttons.forEach((button) => {
 
     player = button.id;
     Game(player, computer);
+
+    if (P_count > 3) {
+      win = true;
+    } else if (C_count > 3) {
+      loose = true;
+    }
+
+    //win/loose get true show
+    if (win) {
+      let winPanel = document.createElement("div");
+      let button = document.createElement("button");
+
+      winPanel.classList.add("Panel");
+      winPanel.textContent = "Yay!! You win";
+      button.textContent = "PlayAgain";
+      button.addEventListener("click",()=>{
+        window.location.reload();
+      }
+      )
+      winPanel.appendChild(button);
+      Result.appendChild(winPanel);
+    } else if (loose) {
+      let loosePanel = document.createElement("div");
+      let button = document.createElement("button");
+
+      loosePanel.classList.add("Panel");
+      loosePanel.textContent = "I think You loose by Mistake";
+      button.textContent = "TryAgain";
+      button.addEventListener("click",()=>{
+        window.location.reload();
+      })
+      loosePanel.appendChild(button);
+      Result.appendChild(loosePanel);
+    }
   });
 });
