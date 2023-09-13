@@ -4,6 +4,8 @@ let count=0;
 const score = document.querySelector("#score");
 score.textContent=count;
 
+const playerSelection = document.querySelector("#player");
+
 //random weapon for computer
 let computer;
 let selection = Math.random();
@@ -21,20 +23,20 @@ if (selection < 0.34) {
     (x == "paper" && y == "paper") ||
     (x == "scissor" && y == "scissor")
   ) {
-    console.log("Tie");
+    playerSelection.textContent = "Tie";
   } else if (
     (x == "rock" && y == "paper") ||
     (x == "paper" && y == "scissor") ||
     (x == "scissor" && y == "rock")
   ) {
-    console.log("you loose!!");
+    playerSelection.textContent = "Loose!!";
   } else if (
     (x == "rock" && y == "scissor") ||
     (x == "paper" && y == "rock") ||
     (x == "scissor" && y == "paper")
   ) {
-    console.log("you winn!!");
-  } else console.log("enter correct option");
+    playerSelection.textContent = "Winn!!";
+  } else playerSelection.textContent = "Enter Correct Option!!";
 };
 
 // player weapon selection
