@@ -16,3 +16,11 @@
 button{
     width: 10vw;
 }
+.gamePanel{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: -5;
+    top: 20vh;
+}
