@@ -1,4 +1,4 @@
-.Panel {
+.winPanel {
   display: flex;
   background-color: rgb(184, 18, 18);
   height: 40vh;
@@ -13,14 +13,25 @@
   display: flex;
   justify-content: center;
 }
-button{
-    width: 10vw;
+button {
+  width: 10vw;
 }
-.gamePanel{
-    position: relative;
+.gamePanel {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: -5;
+  top: 20vh;
+}
+
+  .losePanel {
+    background-color: rgb(184, 18, 18);
+    height: 20vw;
+    width: 50vw;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    z-index: -5;
-    top: 20vh;
 }
+

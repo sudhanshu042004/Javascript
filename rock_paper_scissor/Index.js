@@ -2,7 +2,7 @@ let player;
 let P_count = 0;
 let C_count = 0;
 var win = false;
-var loose = false;
+var lose = true;
 
 const playerscore = document.querySelector("#pscore");
 const computerscore = document.querySelector("#cscore");
@@ -57,20 +57,20 @@ buttons.forEach((button) => {
     computerSelection.innerHTML=computer;
    setTimeout(() => {
     Game(player, computer);
-   }, 1000); 
+   }, 500); 
 
     if (P_count > 3) {
       win = true;
     } else if (C_count > 3) {
-      loose = true;
+      lose = true;
     }
-
+    console.log(lose);
     //win/loose get true show
     if (win) {
       let winPanel = document.createElement("div");
       let button = document.createElement("button");
 
-      winPanel.classList.add("Panel");
+      winPanel.classList.add("winPanel");
       winPanel.textContent = "Yay!! You win";
       button.textContent = "PlayAgain";
       button.addEventListener("click",()=>{
@@ -79,11 +79,12 @@ buttons.forEach((button) => {
       )
       winPanel.appendChild(button);
       Result.appendChild(winPanel);
-    } else if (loose) {
+    } else if (lose) {
+      console.log("lose");
       let loosePanel = document.createElement("div");
       let button = document.createElement("button");
 
-      loosePanel.classList.add("Panel");
+      loosePanel.classList.add("losePanel");
       loosePanel.textContent = "I think You loose by Mistake";
       button.textContent = "TryAgain";
       button.addEventListener("click",()=>{
