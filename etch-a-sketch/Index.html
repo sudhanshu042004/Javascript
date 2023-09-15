@@ -3,16 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
     <title>Document</title>
   </head>
   <body>
-    <div class="input">
-      <label for="num">number of pixel you want.</label>
-      <input type="number" name="num" id="num" maxlength="64">
-      <input type="submit" id="submit">
+    <div class="sketch">
+      <div class="inputDiv">
+        <label for="num" class="inputChild">number of pixel you want.</label>
+        <input type="number" name="num" class="inputChild" id="num" maxlength="64" />
+        <input type="submit" id="submit" class="inputChild" />
+      </div>
+      <div id="container"></div>
     </div>
-    <div id="container"></div>
     <script src="index.js"></script>
   </body>
 </html>
