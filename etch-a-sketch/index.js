@@ -4,19 +4,25 @@ const submit = document.querySelector("#submit");
 const inputdiv = document.querySelector(".inputDiv");
 const discoBtn = document.querySelector(".disco");
 const rgbBtn = document.querySelector(".rgb");
-const colorReset = document.querySelector(".reset");
+const colorReset = document.querySelector(".resetColor");
+const resetBtn = document.querySelector(".reset");
+const darken = document.querySelector(".darken");
 let resetCount = 0;
 let Disco = false;
 let rgb = false;
+let dark = true
 
 
 submit.addEventListener("click", () => {
   resetCount = ++resetCount;
-  discoBtn.onclick=()=>{ 
+  resetBtn.addEventListener("click",()=>{
+    window.location.reload();
+  })
+  discoBtn.addEventListener("click",()=>{ 
     Disco = true;
     rgb = false;
     console.log("working");
-  }
+  });
   rgbBtn.addEventListener("click", ()=>{
     Disco = false;
     rgb = true;
