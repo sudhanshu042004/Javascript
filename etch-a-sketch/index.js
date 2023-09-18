@@ -8,27 +8,35 @@ const colorReset = document.querySelector(".resetColor");
 const resetBtn = document.querySelector(".reset");
 const darken = document.querySelector(".darken");
 let resetCount = 0;
+let colorOpacity = 0.1;
 let Disco = false;
 let rgb = false;
-let dark = true
-
+let dark = false;
 
 submit.addEventListener("click", () => {
   resetCount = ++resetCount;
-  resetBtn.addEventListener("click",()=>{
+
+  resetBtn.addEventListener("click", () => {
     window.location.reload();
-  })
-  discoBtn.addEventListener("click",()=>{ 
+  });
+
+  darken.addEventListener("click", () => {
+    Discoisco = false;
+    rgb = false;
+    dark = true;
+  });
+  discoBtn.addEventListener("click", () => {
     Disco = true;
     rgb = false;
-    console.log("working");
   });
-  rgbBtn.addEventListener("click", ()=>{
+  rgbBtn.addEventListener("click", () => {
     Disco = false;
+    dark=false;
     rgb = true;
   });
-  colorReset.addEventListener("click", ()=>{
+  colorReset.addEventListener("click", () => {
     Disco = false;
+    dark=false;
     rgb = false;
   });
   var num = document.querySelector("#num").value;
@@ -47,8 +55,14 @@ submit.addEventListener("click", () => {
       inDiv.style.height = height;
       inDiv.style.width = width;
       container.appendChild(inDiv);
+
       inDiv.addEventListener("mouseover", () => {
-        inDiv.style.backgroundColor = "hsl(213, 19%, 28%)";
+        
+        if (Disco == 0 && rgb == 0 && dark == 0) {
+          // color when disco and rgb false
+          inDiv.style.backgroundColor = "hsl(213, 19%, 28%)";
+        }
+
         if (Disco) {
           setInterval(() => {
             inDiv.style.backgroundColor = "hsl(213, 19%, 28%)";
@@ -63,6 +77,19 @@ submit.addEventListener("click", () => {
             let color = `hsl( ${colorValue}, 100%, 50% )`;
             inDiv.style.backgroundColor = color;
           }, 1);
+        }
+        if (dark) {
+          inDiv.addEventListener("click", () => {
+            inDiv.style.backgroundColor = `hsla(213, 19%, 28%,${colorOpacity})`;
+            colorOpacity += 0.1;
+            setTimeout(() => {
+              console.log("working");
+              inDiv.style.backgroundColor = "white";
+            }, 5000);
+          });
+          inDiv.addEventListener("mouseleave",()=>{
+            colorOpacity=0.1;
+          })
         }
       });
     }
