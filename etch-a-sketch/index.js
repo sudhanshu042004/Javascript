@@ -2,12 +2,29 @@ const container = document.querySelector("#container");
 //take input from user and set maxlength
 const submit = document.querySelector("#submit");
 const inputdiv = document.querySelector(".inputDiv");
+const discoBtn = document.querySelector(".disco");
+const rgbBtn = document.querySelector(".rgb");
+const colorReset = document.querySelector(".reset");
 let resetCount = 0;
 let Disco = false;
-let vibgyor = true;
+let rgb = false;
+
 
 submit.addEventListener("click", () => {
   resetCount = ++resetCount;
+  discoBtn.onclick=()=>{ 
+    Disco = true;
+    rgb = false;
+    console.log("working");
+  }
+  rgbBtn.addEventListener("click", ()=>{
+    Disco = false;
+    rgb = true;
+  });
+  colorReset.addEventListener("click", ()=>{
+    Disco = false;
+    rgb = false;
+  });
   var num = document.querySelector("#num").value;
   if (resetCount >= 2) {
     container.innerHTML = "";
@@ -25,12 +42,20 @@ submit.addEventListener("click", () => {
       inDiv.style.width = width;
       container.appendChild(inDiv);
       inDiv.addEventListener("mouseover", () => {
+        inDiv.style.backgroundColor = "hsl(213, 19%, 28%)";
         if (Disco) {
           setInterval(() => {
             inDiv.style.backgroundColor = "hsl(213, 19%, 28%)";
-        let colorValue = Math.floor(Math.random() * 360);
-        let color = `hsl( ${colorValue}, 100%, 50% )`;
-          inDiv.style.backgroundColor = color;
+            let colorValue = Math.floor(Math.random() * 360);
+            let color = `hsl( ${colorValue}, 100%, 50% )`;
+            inDiv.style.backgroundColor = color;
+          }, 1);
+        }
+        if (rgb) {
+          setTimeout(() => {
+            let colorValue = Math.floor(Math.random() * 360);
+            let color = `hsl( ${colorValue}, 100%, 50% )`;
+            inDiv.style.backgroundColor = color;
           }, 1);
         }
       });

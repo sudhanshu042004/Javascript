@@ -9,7 +9,6 @@
     border-style: solid;
     justify-content: center;
     align-items: center;
-    margin: 20px;
     box-shadow: 0px 10px 20px 0px #444c56;
 }
 .inputDiv{
@@ -47,4 +46,15 @@ input{
 .inputChild{
     padding: 10px;
     margin: 6px;
+}
+.box{
+    display: flex;
+    margin: 20px;
+    display: flex;
+}
+button{
+    background-color: #404d5e;
+    border-style: none;
+    height: 50px;
+    width: 50px;
 }
