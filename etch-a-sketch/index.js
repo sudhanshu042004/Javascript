@@ -1,7 +1,10 @@
 const container = document.querySelector("#container");
 //take input from user and set maxlength
 const submit = document.querySelector("#submit");
+const inputdiv = document.querySelector(".inputDiv");
 let resetCount = 0;
+let Disco = false;
+let vibgyor = true;
 
 submit.addEventListener("click", () => {
   resetCount = ++resetCount;
@@ -22,7 +25,14 @@ submit.addEventListener("click", () => {
       inDiv.style.width = width;
       container.appendChild(inDiv);
       inDiv.addEventListener("mouseover", () => {
-        inDiv.style.backgroundColor = "blue";
+        if (Disco) {
+          setInterval(() => {
+            inDiv.style.backgroundColor = "hsl(213, 19%, 28%)";
+        let colorValue = Math.floor(Math.random() * 360);
+        let color = `hsl( ${colorValue}, 100%, 50% )`;
+          inDiv.style.backgroundColor = color;
+          }, 1);
+        }
       });
     }
   } else {

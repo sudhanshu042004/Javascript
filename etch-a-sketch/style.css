@@ -23,7 +23,6 @@
 .draw{
     padding: 0;
     margin: 0;
-    background-color: rgb(255, 255, 255);
 }
 .sketch{
     background: linear-gradient(180deg,#87A0BD,#bdd3ed);
