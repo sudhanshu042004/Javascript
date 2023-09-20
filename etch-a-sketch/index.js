@@ -21,7 +21,6 @@ let dark = false;
 let resetB = false;
 let color = false;
 
-const innerShadowStyle = `box-shadow: inset 0 0 10px 5px rgba(0, 0, 0, 0.5);`;
 
 submit.addEventListener("click", () => {
   resetCount = ++resetCount;
