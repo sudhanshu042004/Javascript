@@ -2,7 +2,7 @@ let player;
 let P_count = 0;
 let C_count = 0;
 var win = false;
-var lose = true;
+var lose = false;
 
 const playerscore = document.querySelector("#pscore");
 const computerscore = document.querySelector("#cscore");
