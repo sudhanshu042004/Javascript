@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    padding: 0;
+}
+.calc{
+    height: 100;
+    transform: rotate(35deg);
+}
+
+.background{
+    display: flex;
+    position: relative;
+    top: -400px;
+    left: -540px;
+    width: 200vw;
+    transform: rotate(45deg);
+}
+
+.bg1{
+    background-color: #b4b2a9;
+    height: 400vh;
+    width: 20vw;
+}
+.bg2{
+    background-color: #a09c94;
+    width: 33vw;
+    height: 400vh;
+}
+.bg3{
+    background-color: #7d786e;
+    width: 32vw;
+    height: 400vh;
+}
+.bg4{
+    background-color: #5f584d;
+    width: 40vw;
+    height: 400vh;
+}
