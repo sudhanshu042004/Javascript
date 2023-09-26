@@ -1,40 +1,70 @@
-*{
-    margin: 0;
-    overflow-x: hidden;
-    overflow-y: hidden;
-    padding: 0;
+* {
+  margin: 0;
+  padding: 0;
 }
-.calc{
-    height: 100;
-    transform: rotate(35deg);
+body {
+  background-color: white;
 }
-
-.background{
+.calculator {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.cal-head {
+  height: 580px;
+  width: 330px;
+  background-color: aquamarine;
+}
+.cal-btm{
+    background-color: bisque;
+    height: 56.66px;
+    width: 330px;
+}
+.display{
+    color: white;
+    background-color: black;
+    height: 160px;
     display: flex;
-    position: relative;
-    top: -400px;
-    left: -540px;
-    width: 200vw;
-    transform: rotate(45deg);
+    flex-direction: column;
+    justify-content: end;
+}
+.cal-btn{
+    display: flex;
+    flex-wrap: wrap;
+    height: 68px;
 }
 
-.bg1{
-    background-color: #b4b2a9;
-    height: 400vh;
-    width: 20vw;
+.btn, .ac ,.del{
+    width: 82.4px;
+    height: 68px;
+    text-align: center;
+    padding-top: 15px;
 }
-.bg2{
-    background-color: #a09c94;
-    width: 33vw;
-    height: 400vh;
+.btn, .ac,.del:hover{
+  cursor: pointer;
 }
-.bg3{
-    background-color: #7d786e;
-    width: 32vw;
-    height: 400vh;
+
+.eql-btn{
+  text-align: center;
+  padding-top: 15px;
+  cursor: pointer;
+  padding-bottom: 15px;
 }
-.bg4{
-    background-color: #5f584d;
-    width: 40vw;
-    height: 400vh;
+.dsp-head{
+  text-align: end;
+}
+.dsp-btm{
+  text-align: end;
+  font-size: 50px;
+}
+input{
+  height: 80px;
+    font-size: 22.6px;
+    text-align: end;
+    border-style: none;
+    background-color: black;
+    color: white;
 }
