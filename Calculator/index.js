@@ -59,20 +59,41 @@ const labelValue = () => {
     label.innerHTML = labelString;
 };
 
-let ans = 0;
 const addFunction = () => {
+    let ans = 0;
     let i =0;
     while(i<opr.length){
         for (let index = 0; index < opr.length; index++) {
-            if (opr.at(index=="+")) {
-                work();
+            if (opr.at(index)=="+"){
+                ans = num.at(index) + num.at(index+1);
+                num.splice(index,2, ans);
+                opr.splice(index,1);
             }
-            
+            console.log(opr);
+            console.log(num);
         }
         
         i++
     }
 }
+
+const minusFunction = () => {
+    let ans = 0;
+    let i =0;
+    while(i<opr.length){
+        for (let index = 0; index < opr.length; index++) {
+            if (opr.at(index)=="-"){
+                ans = num.at(index) - num.at(index+1);
+                num.splice(index,2, ans);
+                opr.splice(index,1);
+            }
+            console.log(opr);
+            console.log(num);
+        }
+        
+        i++
+    }
+} 
 
 allBtns.forEach((btn) => {
     btn.addEventListener("click", (e) => {
@@ -122,4 +143,5 @@ equal.addEventListener("click", () => {
         labelValue();
     }
     addFunction();
+    minusFunction();
 });
