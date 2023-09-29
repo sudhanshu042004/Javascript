@@ -1,45 +1,29 @@
-/* @import 'tailwindcss/base';
+@import 'tailwindcss/base';
 @import 'tailwindcss/components';
-@import 'tailwindcss/utilities'; */
+@import 'tailwindcss/utilities';
 * {
   margin: 0;
   padding: 0;
 }
 body {
-  background-color: white;
+  background-color: #c8e7e7;
 }
-.calculator {
-  height: 100vh;
-  width: 100vw;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.dsp-head{
+  background-color: #3b4356;
+  text-align: end;
 }
-.cal-head {
-  height: 580px;
-  width: 330px;
-  background-color: aquamarine;
-}
-.cal-btm{
-    background-color: bisque;
-    height: 56.66px;
-    width: 330px;
-}
-.display{
-    color: white;
-    background-color: black;
-    height: 160px;
-    display: flex;
-    flex-direction: column;
-    justify-content: end;
+.dsp-btm{
+  text-align: end;
+  font-size: 50px;
 }
 .cal-btn{
     display: flex;
     flex-wrap: wrap;
-    height: 68px;
+    height: 437px;
+    /* background-color: #384053; add to display  
+    color: white; */
+    background-color: #384053;
 }
-
 .btn, .ac ,.del{
     width: 82.4px;
     height: 68px;
@@ -49,25 +33,14 @@ body {
 .btn, .ac,.del:hover{
   cursor: pointer;
 }
-
 .eql-btn{
   text-align: center;
   padding-top: 15px;
   cursor: pointer;
   padding-bottom: 15px;
 }
-.dsp-head{
-  text-align: end;
-}
-.dsp-btm{
-  text-align: end;
-  font-size: 50px;
-}
-input{
-  height: 80px;
-    font-size: 22.6px;
-    text-align: end;
-    border-style: none;
-    background-color: black;
-    color: white;
+.cal-btm{
+    background-color: bisque;
+    height: 56.66px;
+    width: 330px;
 }
