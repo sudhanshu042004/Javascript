@@ -1,46 +1,14 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
-* {
-  margin: 0;
-  padding: 0;
-}
-body {
-  background-color: #c8e7e7;
-}
-.dsp-head{
-  background-color: #3b4356;
-  text-align: end;
-}
-.dsp-btm{
-  text-align: end;
-  font-size: 50px;
-}
-.cal-btn{
-    display: flex;
-    flex-wrap: wrap;
-    height: 437px;
-    /* background-color: #384053; add to display  
-    color: white; */
-    background-color: #384053;
-}
+
 .btn, .ac ,.del{
     width: 82.4px;
     height: 68px;
     text-align: center;
     padding-top: 15px;
+    background-color: #384053;
 }
 .btn, .ac,.del:hover{
   cursor: pointer;
-}
-.eql-btn{
-  text-align: center;
-  padding-top: 15px;
-  cursor: pointer;
-  padding-bottom: 15px;
-}
-.cal-btm{
-    background-color: bisque;
-    height: 56.66px;
-    width: 330px;
 }

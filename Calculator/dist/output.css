@@ -542,6 +542,10 @@ video {
   height: 10rem;
 }
 
+.h-\[27\.313rem\] {
+  height: 27.313rem;
+}
+
 .h-\[36\.25rem\] {
   height: 36.25rem;
 }
@@ -558,8 +562,16 @@ video {
   width: 100vw;
 }
 
+.cursor-pointer {
+  cursor: pointer;
+}
+
 .flex-col {
   flex-direction: column;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
 }
 
 .items-center {
@@ -574,37 +586,42 @@ video {
   justify-content: center;
 }
 
+.bg-\[\#384053\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(56 64 83 / var(--tw-bg-opacity));
+}
+
+.bg-\[\#3A4655\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(58 70 85 / var(--tw-bg-opacity));
+}
+
+.bg-\[\#CAE5E6\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(202 229 230 / var(--tw-bg-opacity));
+}
+
 .bg-neutral-50 {
   --tw-bg-opacity: 1;
   background-color: rgb(250 250 250 / var(--tw-bg-opacity));
 }
 
-* {
-  margin: 0;
-  padding: 0;
+.text-center {
+  text-align: center;
 }
 
-body {
-  background-color: #c8e7e7;
-}
-
-.dsp-head{
-  background-color: #3b4356;
+.text-end {
   text-align: end;
 }
 
-.dsp-btm{
-  text-align: end;
-  font-size: 50px;
+.text-5xl {
+  font-size: 3rem;
+  line-height: 1;
 }
 
-.cal-btn{
-  display: flex;
-  flex-wrap: wrap;
-  height: 437px;
-  /* background-color: #384053; add to display  
-    color: white; */
-  background-color: #384053;
+.text-neutral-50 {
+  --tw-text-opacity: 1;
+  color: rgb(250 250 250 / var(--tw-text-opacity));
 }
 
 .btn, .ac ,.del{
@@ -612,21 +629,9 @@ body {
   height: 68px;
   text-align: center;
   padding-top: 15px;
+  background-color: #384053;
 }
 
 .btn, .ac,.del:hover{
   cursor: pointer;
-}
-
-.eql-btn{
-  text-align: center;
-  padding-top: 15px;
-  cursor: pointer;
-  padding-bottom: 15px;
-}
-
-.cal-btm{
-  background-color: bisque;
-  height: 56.66px;
-  width: 330px;
 }
