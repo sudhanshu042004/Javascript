@@ -38,6 +38,10 @@ body {
     list-style: none;
     margin: 0 20px;
 }
+.showSelection>ul>li:hover{
+    color: #082f49;
+    cursor: default;
+}
 
 .gameboard {
     margin: auto;
@@ -56,6 +60,10 @@ body {
 
 .block {
     border: #0369a1 1px solid;
+    text-align: center;
+    color: white;
+    padding: 20px;
+    font-size: 50px;
 }
 .dialog{
     font-size: 50px;

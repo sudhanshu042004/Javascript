@@ -4,8 +4,8 @@ let x = (a) => {
 }
 
 const GameBoard = ["", "", "", "", "", "", "", "", ""];
-function player(selection) {
-    return { selection };
+function player(mark) {
+    return { mark };
 }
 
 // get player selection by dialog
@@ -14,23 +14,32 @@ const dialogBtn = document.querySelectorAll(".dialog-btn");
 const btnX = document.querySelector(".Xbtn");
 const btnY = document.querySelector(".Ybtn");
 const showSelectionDiv = document.querySelector(".showSelection");
+const blockDiv = document.querySelectorAll(".block");
+
+let player1;
+let player2;
+
 dialog.showModal();
 dialogBtn.forEach((item) => {
     item.addEventListener("click", () => {
         dialog.close();
-        let choice = item.value;
-        let choice2;
-        if (choice == "X") {
-            choice2 = "Y";
+        let choiceof1 = item.value;
+        let choiceof2;
+        if (choiceof1 == "X") {
+            choiceof2 = "O";
         } else {
-            choice2 = "X";
+            choiceof2 = "X";
         }
-        const player1 = player(choice);
-        const player2 = player(choice2);
+        player1 = player(choiceof1);
+        player2 = player(choiceof2);
         showSelectionDiv.innerHTML = `<ul> 
-        <li> Player 1: ${player1.selection}</li>
-        <li>player 2: ${player2.selection}</li> </ul >`
+        <li> <h2>Player 1: ${player1.mark}</h2></li>
+        <li><h2>player 2: ${player2.mark}</h2></li> </ul >`
     })
 })
 
-
+blockDiv.forEach((item)=>{
+    item.addEventListener("click",()=>{
+        item.innerHTML=`${player1.mark}`
+    })
+})
