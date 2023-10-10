@@ -15,7 +15,8 @@ const btnX = document.querySelector(".Xbtn");
 const btnY = document.querySelector(".Ybtn");
 const showSelectionDiv = document.querySelector(".showSelection");
 const blockDiv = document.querySelectorAll(".block");
-const playAgain = document.querySelector(".playAgain");
+const body = document.querySelector("body");
+
 
 let player1;
 let player2;
@@ -52,14 +53,57 @@ blockDiv.forEach((item)=>{
             x(GameBoard);
         }
         ternCount++;
-        gameResult();
+        Game();
     })
 })
 
-function gameResult() {
+let Player1win;
+let Player2win;
+
+function GameResult() {
+    Player1win = (GameBoard[0] == player1.mark && GameBoard[1] == player1.mark && GameBoard[2] == player1.mark) || 
+    (GameBoard[3] == player1.mark && GameBoard[4] == player1.mark && GameBoard[5] == player1.mark) || 
+    (GameBoard[6] == player1.mark && GameBoard[7] == player1.mark && GameBoard[8] == player1.mark) || 
+    (GameBoard[0] == player1.mark && GameBoard[3] == player1.mark && GameBoard[6] == player1.mark) || 
+    (GameBoard[1] == player1.mark && GameBoard[4] == player1.mark && GameBoard[7] == player1.mark) ||
+    (GameBoard[2] == player1.mark && GameBoard[5] == player1.mark && GameBoard[8] == player1.mark) || 
+    (GameBoard[0] == player1.mark && GameBoard[4] == player1.mark && GameBoard[8] == player1.mark) || 
+    (GameBoard[2] == player1.mark && GameBoard[4] == player1.mark && GameBoard[6] == player1.mark);  
+
+    Player2win = (GameBoard[0] == player2.mark && GameBoard[1] == player2.mark && GameBoard[2] == player2.mark) || 
+    (GameBoard[3] == player2.mark && GameBoard[4] == player2.mark && GameBoard[5] == player2.mark) || 
+    (GameBoard[6] == player2.mark && GameBoard[7] == player2.mark && GameBoard[8] == player2.mark) || 
+    (GameBoard[0] == player2.mark && GameBoard[3] == player2.mark && GameBoard[6] == player2.mark) || 
+    (GameBoard[1] == player2.mark && GameBoard[4] == player2.mark && GameBoard[7] == player2.mark) ||
+    (GameBoard[2] == player2.mark && GameBoard[5] == player2.mark && GameBoard[8] == player2.mark) || 
+    (GameBoard[0] == player2.mark && GameBoard[4] == player2.mark && GameBoard[8] == player2.mark) || 
+    (GameBoard[2] == player2.mark && GameBoard[4] == player2.mark && GameBoard[6] == player2.mark);
 }
+
+
+    function GameWin(){
+        setTimeout(() => {
+        const playAgain = document.createElement("dialog");
+            playAgain.classList.add("playAgain");
+            body.appendChild(playAgain);
+            playAgain.showModal();
+            playAgain.innerHTML=` ${Player1win ? ('Player 1') : ('Player 2')} Winn!!
+            <button class='reload'>Play Again</button>`
+            const reloadBtn =  document.querySelector(".reload");
+            reloadBtn.addEventListener("click",()=>{
+                window.location.reload();
+            })
+        }, 500);
+    }
+
+
 function Game(){
-    if (condition) {
-        
+    x(Player1win);
+    GameResult();
+    if (Player1win) {
+        GameWin();
+    }
+    if (Player2win) {
+        GameWin();
     }
 }
