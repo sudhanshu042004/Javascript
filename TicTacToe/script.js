@@ -53,7 +53,6 @@ blockDiv.forEach((item)=>{
         ternCount++;
         buttonSound.play();
         Game();
-        Tie();
     })
 })
 
@@ -116,9 +115,6 @@ function Game(){
     if (Player2win) {
         GameWin();
     }
-}
-function Tie(){
-    GameResult();
     if (ternCount>=9){
         GameWin();
         tieSound.play();
