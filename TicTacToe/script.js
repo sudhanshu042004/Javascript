@@ -15,6 +15,7 @@ const btnX = document.querySelector(".Xbtn");
 const btnY = document.querySelector(".Ybtn");
 const showSelectionDiv = document.querySelector(".showSelection");
 const blockDiv = document.querySelectorAll(".block");
+const playAgain = document.querySelector(".playAgain");
 
 let player1;
 let player2;
@@ -38,17 +39,27 @@ dialogBtn.forEach((item) => {
     })
 })
 
-let chanceCount=0;
+let ternCount=0;
 blockDiv.forEach((item)=>{
     item.addEventListener("click",()=>{
-        
-        
-        if(chanceCount%2==0){
+        if(ternCount%2==0){
             item.innerHTML=`${player1.mark}`
-        }else if (chanceCount%2!=0){
+            GameBoard.splice(item.value,1,player1.mark);
+            x(GameBoard);
+        }else if (ternCount%2!=0){
             item.innerHTML=`${player2.mark}`
+            GameBoard.splice(item.value,1,player2.mark);
+            x(GameBoard);
         }
-        chanceCount++;
-    
+        ternCount++;
+        gameResult();
     })
 })
+
+function gameResult() {
+}
+function Game(){
+    if (condition) {
+        
+    }
+}
