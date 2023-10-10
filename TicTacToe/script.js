@@ -38,8 +38,17 @@ dialogBtn.forEach((item) => {
     })
 })
 
+let chanceCount=0;
 blockDiv.forEach((item)=>{
     item.addEventListener("click",()=>{
-        item.innerHTML=`${player1.mark}`
+        
+        
+        if(chanceCount%2==0){
+            item.innerHTML=`${player1.mark}`
+        }else if (chanceCount%2!=0){
+            item.innerHTML=`${player2.mark}`
+        }
+        chanceCount++;
+    
     })
 })
