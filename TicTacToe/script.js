@@ -1,8 +1,3 @@
-// test 
-let x = (a) => {
-    console.log(a);
-}
-
 const GameBoard = ["", "", "", "", "", "", "", "", ""];
 function player(mark) {
     return { mark };
@@ -16,6 +11,8 @@ const btnY = document.querySelector(".Ybtn");
 const showSelectionDiv = document.querySelector(".showSelection");
 const blockDiv = document.querySelectorAll(".block");
 const body = document.querySelector("body");
+const buttonSound = new Audio("./sound/click-button-140881.mp3");
+const tadaSound = new Audio("./sound/tada-fanfare-a-6313.mp3");
 
 
 let player1;
@@ -46,13 +43,14 @@ blockDiv.forEach((item)=>{
         if(ternCount%2==0){
             item.innerHTML=`${player1.mark}`
             GameBoard.splice(item.value,1,player1.mark);
-            x(GameBoard);
+            
         }else if (ternCount%2!=0){
             item.innerHTML=`${player2.mark}`
             GameBoard.splice(item.value,1,player2.mark);
-            x(GameBoard);
+            
         }
         ternCount++;
+        buttonSound.play();
         Game();
     })
 })
@@ -90,6 +88,7 @@ function GameResult() {
             playAgain.innerHTML=` ${Player1win ? ('Player 1') : ('Player 2')} Winn!!
             <button class='reload'>Play Again</button>`
             const reloadBtn =  document.querySelector(".reload");
+            tadaSound.play();
             reloadBtn.addEventListener("click",()=>{
                 window.location.reload();
             })
