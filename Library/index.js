@@ -34,10 +34,12 @@ label.textContent="Read";
 
 let readValue = false;
 
-function Book(title, author, page,read) {
-    this.title = title;
-    this.author = author;
-    this.page = page;
+class Book{
+    constructor(title,author,page,read){
+        this.title=title;
+        this.author = author;
+        this.page = page;
+    }
 }
 
 const library = [];
@@ -46,6 +48,7 @@ function addToLibary(a, b, c, d) {
     library.push(new Book(a, b, c));
     x(library); //testing
 }
+
 
 // testing
 function x(a) {
