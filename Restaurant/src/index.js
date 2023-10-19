@@ -1,4 +1,5 @@
-import css from "file.css"
+import _ from 'lodash';
+import './style.css';
 function x(a){
     console.log(a);
 }
