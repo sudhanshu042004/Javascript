@@ -3,4 +3,4 @@ import './style.css';
 function x(a){
     console.log(a);
 }
-x("hello bachoo");
+x("hello bacho");

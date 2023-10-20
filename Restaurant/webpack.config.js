@@ -1,18 +1,27 @@
 const path = require('path');
 
 
-module.exports={
+module.exports = {
+    mode: "development",
     entry: {
-        app: './src/index.js',
+        index: './src/index.js',
+    },
+    devtool: 'inline-source-map',
+    devServer: {
+        static: './src',
     },
     // plugins: [
     //     new HtmlWebpackPlugin({
-    //         title: 'Production',
+    //         title: 'Document',
     //     }),
     // ],
     output: {
         filename: '[name].bundle.js',
         path: path.resolve(__dirname, 'dist'),
+        clean: true,
+    },
+    optimization: {
+        runtimeChunk: 'single',
     },
     module: {
         rules: [
