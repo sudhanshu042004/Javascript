@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Yuji+Hentaigana+Akari&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-image: url(./assets/cooking.jpg);
+    background-size: cover;
+    font-family: 'Poppins', sans-serif;
+}
+.nav{
+    height: 10rem;
+    background-color: #431407da;
+    color: white;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.nameDiv{
+    font-size: 50px;
+    font-family: 'Yuji Hentaigana Akari', cursive;
+}
+.nameDiv:hover{
+    color: #f97316;
+
+}
+.nav>ul{
+    display: flex;
+}
+.nav>ul>li{
+    padding-top: 20px;
+    list-style: none;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+.nav>ul>li:hover{
+    color: #f97316;
+    cursor: pointer;
+    padding-top: 10px;
+    text-decoration: underline;
+    text-underline-offset: 15px;
+}
+.fa{
+    font-size:25px;
+    color:white;
+}
+.blockDiv{
+    height: 70rem;
+}
+.home{
+    height: 70rem;
+    margin-top: 30px;
+    background-color: #43140777;
+    color: white;
+    font-size: 40px;
+    padding: 10px;
+}
+.home>div{
+    padding: 50px;
+    text-align: center;
+}
+
+.chef-img{
+    margin: auto;
+    display: block;
+    border-radius: 100%;
+    box-shadow: inset ;
+}
+.chef-img:hover{
+    box-shadow: 0px 0px 20px 0px #f97316;
+}
+
+.footer{
+    position: relative;
+    background-color: #43140777;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    height: 30px;
+    color: white;
+}
+.menu{
+    margin: 100px;
+    height: 70rem;
+    display: grid;
+    grid-template-columns: 500px 500px;
+    grid-template-rows: 500px 500px;
+    gap: 50px;
+}
+.menu>img{
+    height: 400px;
+    width: 500px;
+    display: block;
+    border-radius: 10px;
+}
+.menu>img:hover{
+    box-shadow: 0px 0px 20px 0px #030201;
+}
+.contact{
+    height: 50rem;
+    background-color: #43140777;
+    color: aliceblue;
+    text-align: center;
+    padding: 100px;
+    margin: 20px;
+}
