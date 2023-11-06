@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@400;700&display=swap');
+
+*{
+  margin: 0;
+}
+body{
+  font-family: 'Playpen Sans', cursive;
+  /* background: url('./src/assets/dark-background-abstract-background-network-3d-background-7680x4320-8324.png') no-repeat; */
+  background-size: cover;
+  /* overflow: hidden; */
+  display: flex;
+  background-color: #121212;
+}
+.sidebar{
+  width: 16rem;
+  background-color: rgba(255, 255, 255, 0.466);
+  height: 100vh;
+}
+.sidebar-head{
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.459);
+  color: white;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 3px solid black;
+}
+.sidebar .sidebar-add-button{
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.sidebar .sidebar-add-button:hover{
+  background-color: rgba(0, 0, 0, 0.315);
+}
+
+.main{
+  height: 96vh;
+  width: 80vw;
+  margin: 12px;
+  border-radius: 1.5%;
+  background-color: rgba(255, 255, 255, 0.466);
+}
+.sidebarDialog{
+  border-radius: 10px;
+  left: 150px;
+  top: 50px;
+  border: none;
+  background-color: rgba(0, 0, 0, 0.459);
+  color: white;
+}
+.sidebarDialog input[type=text]:focus{
+  background-color: rgba(255, 255, 255, 0.322);
+  color: rgb(0, 0, 0);
+}
+.sidebarDialog input[type=text]:hover{
+  border-color: rgb(0, 0, 0);
+}
+.sidebarDialog input[type=text]{
+  padding: 12px 20px;
+  background-color: rgba(255, 255, 255, 0.507);
+  margin: 8px 10px;
+  box-sizing: border-box;
+  border: 1px solid #555;
+  outline: none;
+  border-radius: 10px;
+}
+.close-dialog-button{
+  display: block;
+  margin: auto;
+  width: 16vw;
+  height: 5vh;
+  font-weight: bold;
+  border-radius: 10px;
+  border: none;
+}
+.ProjectDiv{
+  background-color: #1212124d;
+  border-radius: 5px;
+  margin: 2px;
+  padding: 4px;
+  text-align: start;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+.ProjectDiv button{
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+}
+.ProjectDiv button:hover{
+  background-color: rgba(0, 0, 0, 0.315);
+}
