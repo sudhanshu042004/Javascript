@@ -1,0 +1,35 @@
+/* style.css */
+
+#app {
+  position: relative;
+}
+
+.button {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.content {
+  display: none;
+  position: absolute;
+  top: 100%; /* Adjust this value to add some space between button and dropdown */
+  left: 0;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+.option {
+  display: block;
+  padding: 8px;
+  text-decoration: none;
+  color: #333;
+  transition: background-color 0.3s;
+}
+
+.option:hover {
+  background-color: #f5f5f5;
+}
+body{
+  background-color: #333;
+}
