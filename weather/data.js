@@ -11,7 +11,6 @@ export async function fetchdata(value) {
 }
 export async function imgfetchdata(weather) {
     const pexelApi = import.meta.env.VITE_API_PEXEL_KEY;
-    console.log(weather);
     try {
         const response = await fetch(`https://api.pexels.com/v1/search?query=${weather}&per_page=1&page=1`, {
             method: 'GET',
@@ -28,3 +27,4 @@ export async function imgfetchdata(weather) {
         throw err;
     }
 }
+// 

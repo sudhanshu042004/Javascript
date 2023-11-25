@@ -4,7 +4,12 @@
     margin: 0;
     padding: 0;
     font-family: 'Poppins', sans-serif;
-    color: gray;
+    overflow: hidden;
+} 
+body{
+    height: 100vh;
+    width: 100vw;
+    background-color: whitesmoke;
 }
 dialog{
     height: 40vh;
@@ -25,6 +30,7 @@ dialog::backdrop{
     margin: 14px;
     -webkit-transition: height .35s ease-in-out;
     transition: ease-in-out, height .35s ease-in-out;
+    padding: 0 5px;
 }
 
 input.location-input:focus{
@@ -42,12 +48,14 @@ input.location-input:focus{
     padding: 6px;
 }
 .weather-info{
-    height: 45vw;
+    min-height: 45vw;
+    min-width: 59vw;
     position: relative;
-    z-index: 1;
+    z-index: 2;
     border-radius: 10px 40px 40px 10px;
     width: 40vw;
     box-shadow: 0 0 4px;
+    background-color: rgba(255, 255, 255, 0.479);
 }
 
 .weather-visual{
@@ -55,8 +63,8 @@ input.location-input:focus{
     width: 59vw;
     box-shadow: 0 0 4px;
     border-radius: 40px 10px 10px 40px;
-    position: relative;
-    z-index: 1;
+    position: absolute;
+    z-index: 0;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -71,3 +79,22 @@ input.location-input:focus{
     position: relative;
     top: 25px;
 }
+.reset{
+    height: 40px;
+    position: relative;
+    z-index: 1;
+    margin: 10px;
+}
+@media only screen and (max-width: 630px) {
+    .container {
+      flex-direction: column;
+    }.weather-info{
+        margin: 20px 0px;
+        width: 100%;
+    }
+    .weather-visual{
+        margin: 20px 0px;
+        width: 100vw;
+        height: 100vw;
+    }
+  }
