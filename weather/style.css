@@ -1,0 +1,62 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+dialog{
+    height: 40vh;
+    width: 50vw;
+    margin: auto;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+dialog::backdrop{
+    background-color: rgba(0, 0, 0, 0.39);
+}
+
+.location-input{
+    height: 3vw;
+    margin: 14px;
+    -webkit-transition: height .35s ease-in-out;
+    transition: ease-in-out, height .35s ease-in-out;
+}
+
+input.location-input:focus{
+    outline: 0px;
+    border: 2px blue solid;
+    height: 4vw;
+}
+.submit-btn{
+    height: 4vw;
+    width: 9vh;
+}
+
+.container{
+    display: flex;
+    padding: 6px;
+}
+.weather-info{
+    height: 45vw;
+    position: relative;
+    z-index: 1;
+    border-radius: 10px 40px 40px 10px;
+    width: 40vw;
+    box-shadow: 0 0 4px;
+}
+
+.weather-visual{
+    height: 45vw;
+    width: 59vw;
+    box-shadow: 0 0 4px;
+    border-radius: 40px 10px 10px 40px;
+    position: relative;
+    z-index: 1;
+}
+.weather-info div{
+    margin: 5vw 4vw;
+}
+.temprature{
+    font-size: 10vw;
+}
