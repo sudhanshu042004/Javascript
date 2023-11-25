@@ -1,29 +1,42 @@
-// const button = document.querySelector("button");
-// const img = document.querySelector('img');
-// const input = document.querySelector('input');
-// let GifKey = import.meta.env.VITE_API_KEY;
-// async function gifData () {
-//   let value = input.value;
-//   if(value==""){
-//     value="below";
-//   }
-//   try{
-//   const response = await fetch(`https://api.giphy.com/v1/gifs/translate?api_key=${GifKey}&s=${value}`, { mode: 'cors' })
-//   const imgdata = await response.json();
-//   return imgdata;
-//   } catch(err){
-//     console.error(err);
-//   }
-// }
-// button.addEventListener('click',async()=>{
-//   const result = await gifData();
-//   img.src= result.data.images.original.url;
-// });
+import { fetchdata } from "./data";
+import { imgfetchdata } from "./data";
+const weather = document.querySelector('.weather');
 const Dialog = document.querySelector('dialog');
-Dialog.innerHTML=`<input class="location-input"></input><button class="submit-btn">Sumbit</button>`;
+const temprature = document.querySelector('.temprature');
+const clock = document.querySelector('.clock');
+const location = document.querySelector('.location');
+const weatherVisual = document.querySelector('.weather-visual');
+Dialog.innerHTML = `<input class="location-input" placeholder="Enter a Location"></input><button class="submit-btn">Sumbit</button>`;
 const submitBtn = document.querySelector('.submit-btn');
 Dialog.showModal();
-submitBtn.addEventListener('click',()=>{
+
+submitBtn.addEventListener('click', async () => {
+  const input = document.querySelector('.location-input');
+  const value = input.value;
+  
   Dialog.close();
-  Dialog.innerHTML="";
+  Dialog.innerHTML = "";
+  try {
+    const weatherData = await fetchdata(value);
+    let currentWeather = await weatherData.current;
+    let currentLocation = await weatherData.location;
+    let weatherText = currentWeather.condition.text;
+    let country = currentLocation.country;
+    weather.innerHTML = `<img src=${currentWeather.condition.icon}></img><span>${weatherText}</span>`;
+    temprature.innerHTML=`${currentWeather.temp_c}°C`
+    clock.innerHTML = currentLocation.localtime;
+    location.innerHTML = `${currentLocation.name}, ${country}`
+    pexelApi(weatherText,country);
+  } catch (err) {
+    weather.innerHTML = `Failed to fetch data due to ${err}`;
+  }
 })
+async function pexelApi(weatherText,country){
+try {
+  const pexelData = await imgfetchdata(weatherText);
+  console.log(pexelData);
+  weatherVisual.style.backgroundImage=`url(${pexelData.photos[0].src.landscape})`
+} catch (err) {
+  console.error(err);
+} 
+}
